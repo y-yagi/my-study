@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  memo: MyString
+  content: MyString
   user: one
 
 two:
   name: MyString
-  memo: MyString
+  content: MyString
   user: two

@@ -4,7 +4,7 @@ table.table
   thead.thead-light
     tr
       th[scope="col"] Title
-      th[scope="col"] Memo
+      th[scope="col"] content
       th[scope="col"]
       th[scope="col"]
       th[scope="col"]
@@ -13,7 +13,7 @@ table.table
     - @themes.each do |theme|
       tr
         td = theme.title
-        td = theme.memo
+        td = theme.content
         td = link_to 'Show', theme, class: 'btn btn-outline-info', role: 'button'
         td = link_to 'Edit', edit_theme_path(theme), class: 'btn btn-outline-info', role: 'button'
         td = link_to 'Destroy', theme, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-outline-danger', role: 'button'
