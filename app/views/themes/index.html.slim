@@ -1,23 +1,23 @@
-h1 Listing themes
+h3 Listing themes
 
-table
-  thead
+table.table
+  thead.thead-light
     tr
-      th title
-      th Memo
-      th
-      th
-      th
+      th[scope="col"] Title
+      th[scope="col"] Memo
+      th[scope="col"]
+      th[scope="col"]
+      th[scope="col"]
 
   tbody
     - @themes.each do |theme|
       tr
         td = theme.title
         td = theme.memo
-        td = link_to 'Show', theme
-        td = link_to 'Edit', edit_theme_path(theme)
-        td = link_to 'Destroy', theme, data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to 'Show', theme, class: 'btn btn-outline-info', role: 'button'
+        td = link_to 'Edit', edit_theme_path(theme), class: 'btn btn-outline-info', role: 'button'
+        td = link_to 'Destroy', theme, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-outline-danger', role: 'button'
 
 br
 
-= link_to 'New Theme', new_theme_path
+= link_to 'New Theme', new_theme_path, class: 'btn btn-outline-primary', role: 'button'

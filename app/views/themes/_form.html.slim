@@ -1,15 +1,16 @@
 = form_for @theme do |f|
-  - if @theme.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@theme.errors.count, "error")} prohibited this theme from being saved:"
+  .form-group
+    - if @theme.errors.any?
+      .alert.alert-danger[role="alert"] 入力エラーがあります
       ul
         - @theme.errors.full_messages.each do |message|
           li = message
 
-  .field
+  .form-group
     = f.label :title
-    = f.text_field :title
-  .field
+    = f.text_field :title, class: "form-control"
+  .form-group
     = f.label :memo
-    = f.text_field :memo
-  .actions = f.submit
+    = f.text_area :memo, class: "form-control"
+  .actions
+    = f.submit class: "btn btn-primary"

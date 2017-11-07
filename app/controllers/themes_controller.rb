@@ -5,11 +5,11 @@ class ThemesController < ApplicationController
     @themes = current_user.themes
   end
 
-  def show
-  end
-
   def new
     @theme = current_user.themes.build
+  end
+
+  def show
   end
 
   def edit
