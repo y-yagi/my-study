@@ -1,0 +1,15 @@
+= form_for @theme do |f|
+  - if @theme.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@theme.errors.count, "error")} prohibited this theme from being saved:"
+      ul
+        - @theme.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :memo
+    = f.text_field :memo
+  .actions = f.submit
