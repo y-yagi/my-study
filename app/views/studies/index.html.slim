@@ -1,0 +1,27 @@
+h1 Listing studies
+
+table.table
+  thead.thead-light
+    tr
+      th[scope="col"] Theme
+      th[scope="col"] Content
+      th[scope="col"] Hour
+      th[scope="col"] Minute
+      th[scope="col"]
+      th[scope="col"]
+      th[scope="col"]
+
+  tbody
+    - @studies.each do |study|
+      tr
+        td = study.theme.title
+        td = study.content
+        td = study.hour
+        td = study.minute
+        td = link_to 'Show', study, class: 'btn btn-outline-info', role: 'button'
+        td = link_to 'Edit', edit_study_path(study), class: 'btn btn-outline-info', role: 'button'
+        td = link_to 'Destroy', study, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-outline-danger', role: 'button'
+
+br
+
+= link_to 'New Study', new_study_path, class: 'btn btn-outline-primary', role: 'button'

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :themes
+  has_many :studies
 
   class << self
     def find_or_create_from_auth_hash(auth)

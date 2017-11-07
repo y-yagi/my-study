@@ -1,0 +1,21 @@
+= form_for @study do |f|
+  .form-group
+    - if @study.errors.any?
+      .alert.alert-danger[role="alert"] 入力エラーがあります
+      ul
+        - @study.errors.full_messages.each do |message|
+          li = message
+
+  .form-group
+    = f.label :theme
+    = f.select :theme_id, options_for_select(@themes), {}, class: "form-control"
+  .form-group
+    = f.label :content
+    = f.text_area :content, class: "form-control"
+  .form-group
+    = f.label :hour
+    = f.number_field :hour, min: 0, max: 100
+  .form-group
+    = f.label :minute
+    = f.number_field :minute, min: 0, max: 59
+  = f.submit class: "btn btn-primary"

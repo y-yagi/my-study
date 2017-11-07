@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :studies
   root 'index#index'
 
   resources :themes

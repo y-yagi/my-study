@@ -22,6 +22,9 @@ html
               span.sr-only
                 | (current)
           li.nav-item
+            = link_to(studies_path, class: 'nav-link')
+              | 学習記録
+          li.nav-item
             = link_to(themes_path, class: 'nav-link')
               | テーマ
     main.container[role="main"]
