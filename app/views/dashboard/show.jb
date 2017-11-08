@@ -1,0 +1,4 @@
+{
+  labels: @summary.keys,
+  series: [@summary.values]
+}
