@@ -13,10 +13,10 @@ table.table
     - @themes.each do |theme|
       tr
         td = theme.title
-        td = render_markdown(theme.content).truncate(50)
+        td = render_markdown(theme.content)
         td = link_to 'Show', theme, class: 'btn btn-outline-info', role: 'button'
         td = link_to 'Edit', edit_theme_path(theme), class: 'btn btn-outline-info', role: 'button'
-        td = link_to 'Destroy', theme, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-outline-danger', role: 'button'
+        td = link_to 'Destroy', theme, data: { confirm: 'テーマに紐付け学習記録もすべて削除されますがよろしいですか?' }, method: :delete, class: 'btn btn-outline-danger', role: 'button'
 
 br
 
