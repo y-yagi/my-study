@@ -2,3 +2,10 @@ h2
   = @theme.title
 p
   = render_markdown(@theme.content)
+hr
+h3 学習記録
+ul
+  - @theme.studies.each do |study|
+    li
+      = study.content
+

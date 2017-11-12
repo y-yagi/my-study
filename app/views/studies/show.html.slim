@@ -1,14 +1,6 @@
-p#notice = notice
-
-p
-  strong Theme:
+h2
   = @study.theme.title
 p
-  strong Content:
-  = @study.content
-p
-  strong Hour:
-  = @study.hour
-p
-  strong Minute:
-  = @study.minute
+  = render_markdown(@study.content)
+br
+  = "学習時間 #{@study.formatted_time}"

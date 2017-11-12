@@ -1,10 +1,10 @@
-h3 Listing themes
+h3 学習テーマ
 
 table.table
   thead.thead-light
     tr
-      th[scope="col"] Title
-      th[scope="col"] content
+      th[scope="col"] タイトル
+      th[scope="col"] 内容
       th[scope="col"]
       th[scope="col"]
       th[scope="col"]
@@ -14,10 +14,10 @@ table.table
       tr
         td = theme.title
         td = render_markdown(theme.content)
-        td = link_to 'Show', theme, class: 'btn btn-outline-info', role: 'button'
-        td = link_to 'Edit', edit_theme_path(theme), class: 'btn btn-outline-info', role: 'button'
-        td = link_to 'Destroy', theme, data: { confirm: 'テーマに紐付け学習記録もすべて削除されますがよろしいですか?' }, method: :delete, class: 'btn btn-outline-danger', role: 'button'
+        td = link_to '表示', theme, class: 'btn btn-outline-info', role: 'button'
+        td = link_to '編集', edit_theme_path(theme), class: 'btn btn-outline-info', role: 'button'
+        td = link_to '削除', theme, data: { confirm: 'テーマに紐付け学習記録もすべて削除されますがよろしいですか?' }, method: :delete, class: 'btn btn-outline-danger', role: 'button'
 
 br
 
-= link_to 'New Theme', new_theme_path, class: 'btn btn-outline-primary', role: 'button'
+= link_to '新規登録', new_theme_path, class: 'btn btn-outline-primary', role: 'button'

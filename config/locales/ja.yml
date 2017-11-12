@@ -7,6 +7,12 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    attributes:
+      study:
+        theme: テーマ
+        content: 内容
+        hour: 学習時間(時)
+        minute: 学習時間(分)
   date:
     abbr_day_names:
     - 日

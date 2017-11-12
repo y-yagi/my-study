@@ -10,6 +10,7 @@ class ThemesController < ApplicationController
   end
 
   def show
+    @theme = current_user.themes.includes(:studies).find(params[:id])
   end
 
   def edit
