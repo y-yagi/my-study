@@ -7,6 +7,11 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+      models:
+        study:
+          attributes:
+            base:
+              :hour_and_minute_blank: 学習時間を入力してください
     attributes:
       study:
         theme: テーマ
