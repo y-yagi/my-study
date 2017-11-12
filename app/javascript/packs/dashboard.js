@@ -10,5 +10,9 @@ const fetchSummary = () => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  fetchSummary();
+  fetchSummary()
+})
+
+document.addEventListener('turbolinks:load', () => {
+  fetchSummary()
 })
