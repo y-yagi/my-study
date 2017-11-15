@@ -10,21 +10,16 @@ html
 
   body
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
-      a.navbar-brand[href="#"]
-        | Menu
+      = link_to(dashboard_path, class: 'navbar-brand')
+        | My Study
       button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"]
         span.navbar-toggler-icon
       #navbarsExampleDefault.collapse.navbar-collapse
         ul.navbar-nav.mr-auto
-          li.nav-item.active
-            = link_to(dashboard_path, class: 'nav-link')
-              | Home
-              span.sr-only
-                | (current)
-          li.nav-item
+          li.nav-item[class=nav_class("studies")]
             = link_to(studies_path, class: 'nav-link')
               | 学習記録
-          li.nav-item
+          li.nav-item[class=nav_class("themes")]
             = link_to(themes_path, class: 'nav-link')
               | テーマ
     main.container[role="main"]
