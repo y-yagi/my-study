@@ -15,7 +15,7 @@ table.table
     - @studies.each do |study|
       tr
         td = study.theme.title
-        td = study.content
+        td = render_markdown(study.content)
         td = study.formatted_time
         td = l(study.created_at)
         td = link_to '表示', study, class: 'btn btn-outline-info', role: 'button'
