@@ -7,5 +7,5 @@ h3 学習記録
 ul
   - @theme.studies.each do |study|
     li
-      = study.content
+      = render_markdown(study.content)
 
