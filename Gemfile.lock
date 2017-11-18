@@ -221,6 +221,7 @@ DEPENDENCIES
   chromedriver-helper
   commonmarker
   jb
+  jwt
   listen (>= 3.0.5, < 3.2)
   omniauth
   omniauth-google-oauth2

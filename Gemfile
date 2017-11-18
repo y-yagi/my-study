@@ -18,6 +18,7 @@ gem 'slim-rails'
 gem 'commonmarker'
 gem 'jb'
 gem 'active_decorator'
+gem 'jwt'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
