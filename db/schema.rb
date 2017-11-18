@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107221612) do
+ActiveRecord::Schema.define(version: 20171118231254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 20171107221612) do
     t.index ["user_id"], name: "index_themes_on_user_id"
   end
 
+  create_table "tokens", force: :cascade do |t|
+    t.string "description"
+    t.string "value", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tokens_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "uid", null: false
     t.string "provider", null: false
@@ -46,4 +55,5 @@ ActiveRecord::Schema.define(version: 20171107221612) do
   add_foreign_key "studies", "themes"
   add_foreign_key "studies", "users"
   add_foreign_key "themes", "users"
+  add_foreign_key "tokens", "users"
 end
