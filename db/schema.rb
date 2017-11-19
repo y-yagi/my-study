@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20171118231254) do
   end
 
   create_table "tokens", force: :cascade do |t|
-    t.string "description"
+    t.string "description", null: false
     t.string "value", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
