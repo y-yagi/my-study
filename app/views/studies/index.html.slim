@@ -19,8 +19,8 @@ table.table
         td = study.formatted_time
         td = l(study.created_at)
         td = link_to '表示', study, class: 'btn btn-outline-info', role: 'button'
-        td = link_to '編集', edit_study_path(study), class: 'btn btn-outline-info', role: 'button'
-        td = link_to '削除', study, data: { confirm: '本当によろしいですか?' }, method: :delete, class: 'btn btn-outline-danger', role: 'button'
+        td = link_to '編集', edit_study_path(study), class: "btn btn-outline-info app-edit-#{study.id}", role: 'button'
+        td = link_to '削除', study, data: { confirm: '本当によろしいですか?' }, method: :delete, class: "btn btn-outline-danger app-delete-#{study.id}", role: 'button'
 
 br
 
