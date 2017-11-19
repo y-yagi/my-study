@@ -12,6 +12,7 @@ before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database database_test' -U postgres
 script:
+  - bin/yarn install
   - RAILS_ENV=test bin/rails db:migrate
   - bin/rails test
   - bin/rails test:system
