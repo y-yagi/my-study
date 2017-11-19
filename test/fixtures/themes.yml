@@ -1,11 +1,9 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+go:
+  title: Go
+  content: Goのコードリーディング
+  user: google
 
-one:
-  name: MyString
-  content: MyString
-  user: one
-
-two:
-  name: MyString
-  content: MyString
-  user: two
+docker:
+  title: Docker
+  content: Dockerになれろ
+  user: google
