@@ -22,5 +22,8 @@ html
           li.nav-item[class=nav_class("themes")]
             = link_to(themes_path, class: 'nav-link')
               | テーマ
+          li.nav-item[class=nav_class("tokens")]
+            = link_to(settings_tokens_path, class: 'nav-link')
+              | 設定
     main.container[role="main"]
       = yield

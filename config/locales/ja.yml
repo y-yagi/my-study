@@ -18,6 +18,8 @@ ja:
         content: 内容
         hour: 学習時間(時)
         minute: 学習時間(分)
+      token:
+        description: 用途
   date:
     abbr_day_names:
     - 日

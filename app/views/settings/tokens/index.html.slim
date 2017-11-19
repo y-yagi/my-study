@@ -1,0 +1,18 @@
+h1 Tokens
+
+table.table
+  thead.thead-light
+    tr
+      th[scope="col"] 用途
+      th[scope="col"]
+      th[scope="col"]
+
+  tbody
+    - @tokens.each do |token|
+      tr
+        td = token.description
+        td = link_to '削除', settings_token_path(token), data: { confirm: '本当によろしいですか?' }, method: :delete, class: 'btn btn-outline-danger', role: 'button'
+
+br
+
+= link_to '新規作成', new_settings_token_path, class: 'btn btn-outline-primary', role: 'button'

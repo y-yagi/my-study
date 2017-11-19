@@ -1,0 +1,12 @@
+= form_for([:settings, @token]) do |f|
+  .form-group
+    - if @token.errors.any?
+      .alert.alert-danger[role="alert"] 入力エラーがあります
+      ul
+        - @token.errors.full_messages.each do |message|
+          li = message
+
+  .form-group
+    = f.label :description
+    = f.text_field :description, class: "form-control"
+  = f.submit class: "btn btn-primary"

@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  resources :studies
   root 'index#index'
 
+  resources :studies
   resources :themes
+
+  namespace :settings do
+    resources :tokens, only: [:index, :new, :show, :create, :destroy]
+  end
+
   get 'dashboard', to: 'dashboard#show'
   get '/auth/:provider/callback', to: 'sessions#create'
   post '/auth/:provider/callback', to: 'sessions#create'

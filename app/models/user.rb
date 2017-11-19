@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-  has_many :themes
-  has_many :studies
+  has_many :themes, dependent: :destroy
+  has_many :studies, dependent: :destroy
+  has_many :tokens, dependent: :destroy
 
   class << self
     def find_or_create_from_auth_hash(auth)
