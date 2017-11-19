@@ -26,6 +26,7 @@ group :development, :test do
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
   gem 'minitest-sub_test_case'
+  gem 'screenshot_opener'
 end
 
 group :development do
