@@ -25,6 +25,8 @@ group :development, :test do
   gem 'capybara', '~> 2.15.4'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+  gem 'minitest-sub_test_case'
+  gem 'screenshot_opener'
 end
 
 group :development do
