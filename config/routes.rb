@@ -13,4 +13,8 @@ Rails.application.routes.draw do
   post '/auth/:provider/callback', to: 'sessions#create'
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
+
+  namespace :api do
+    resources :studies, only: [:show, :create]
+  end
 end

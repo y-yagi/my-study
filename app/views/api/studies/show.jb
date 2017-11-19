@@ -1,0 +1,4 @@
+{
+  theme: @study.theme.title,
+  content: @study.content
+}
