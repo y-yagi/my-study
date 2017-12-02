@@ -1,5 +1,5 @@
 FROM ruby:2.4.1
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs npm cmake unzip
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs npm cmake unzip libnss3
 RUN CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE` && \
     mkdir -p /opt/chromedriver-$CHROMEDRIVER_VERSION && \
     curl -sS -o /tmp/chromedriver_linux64.zip http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip && \
