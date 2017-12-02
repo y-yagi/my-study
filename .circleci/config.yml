@@ -3,7 +3,7 @@ jobs:
   build:
     parallelism: 1
     docker:
-      - image: yyagi/my-study
+      - image: circleci/ruby:2.4-node-browsers
         environment:
           BUNDLE_JOBS: 3
           BUNDLE_RETRY: 3
@@ -24,6 +24,10 @@ jobs:
           keys:
             - my-study-bundle-v2-{{ checksum "Gemfile.lock" }}
             - my-study-bundle-v2-
+
+      - run:
+          name: Install cmake
+          command: sudo apt-get install -y cmake
 
       - run:
           name: Bundle Install
@@ -53,12 +57,6 @@ jobs:
           key: my-study-{{ checksum "yarn.lock" }}
           paths:
             - ~/.yarn-cache
-
-      - run:
-          name: install dockerize
-          command: wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
-          environment:
-            DOCKERIZE_VERSION: v0.3.0
 
       - run:
           name: Wait for DB
