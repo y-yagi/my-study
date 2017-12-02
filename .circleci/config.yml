@@ -65,7 +65,7 @@ jobs:
           command: bin/rails db:schema:load --trace
 
       - type: shell
-        command: bin/rails test || bin/rails test:system
+        command: bin/rails test:all
 
       # Save test results for timing analysis
       - store_test_results:
