@@ -31,7 +31,7 @@ jobs:
 
       - run:
           name: Update chromedriver
-          command: bundle exec chromedriver-update
+          command: bundle exec chromedriver-update && bundle exec chromedriver -v
 
       # Store bundle cache
       - save_cache:
