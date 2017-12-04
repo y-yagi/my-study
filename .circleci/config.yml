@@ -33,10 +33,6 @@ jobs:
           name: Bundle Install
           command: bundle check || bundle install
 
-      - run:
-          name: Update chromedriver
-          command: bundle exec chromedriver-update && bundle exec chromedriver -v
-
       # Store bundle cache
       - save_cache:
           key: my-study-bundle-v2-{{ checksum "Gemfile.lock" }}
