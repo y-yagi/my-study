@@ -23,13 +23,33 @@ jobs:
           name: Install cmake
           command: sudo apt-get install -y cmake
 
+      # Restore bundle cache
+      - restore_cache:
+          keys:
+            - my-study-bundle-v2-{{ checksum "Gemfile.lock" }}
+
       - run:
           name: Bundle Install
           command: bundle check || bundle install
 
+      # Store bundle cache
+      - save_cache:
+          key: my-study-bundle-v2-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - restore_cache:
+          keys:
+            - my-study-yarn-{{ checksum "yarn.lock" }}
+
       - run:
           name: Yarn Install
           command: yarn install
+
+      - save_cache:
+          key: my-study-yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.yarn-cache
 
       - run:
           name: Wait for DB
