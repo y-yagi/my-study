@@ -19,15 +19,16 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          name: Install cmake
-          command: sudo apt-get install -y cmake
-
       # Restore bundle cache
       - restore_cache:
           keys:
             - my-study-bundle-v2-{{ checksum "Gemfile.lock" }}
-            - my-study-bundle-v2-
+          paths:
+            - ~/.bundle-cache
+
+      - run:
+          name: Install cmake
+          command: sudo apt-get install -y cmake
 
       - run:
           name: Bundle Install
@@ -37,12 +38,13 @@ jobs:
       - save_cache:
           key: my-study-bundle-v2-{{ checksum "Gemfile.lock" }}
           paths:
-            - vendor/bundle
+            - ~/.bundle-cache
 
       - restore_cache:
           keys:
             - my-study-yarn-{{ checksum "yarn.lock" }}
-            - my-study-yarn-
+          paths:
+            - ~/.yarn-cache
 
       - run:
           name: Yarn Install
