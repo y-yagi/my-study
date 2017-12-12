@@ -4,8 +4,7 @@ p
   = render_markdown(@theme.content)
 hr
 h3 学習記録
-ul
-  - @theme.studies.each do |study|
-    li
-      = render_markdown(study.content)
+- @theme.studies.each do |study|
+  hr
+    = render_markdown(study.content)
 
