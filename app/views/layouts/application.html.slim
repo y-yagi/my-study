@@ -17,15 +17,16 @@ html
       button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"]
         span.navbar-toggler-icon
       #navbarsExampleDefault.collapse.navbar-collapse
-        ul.navbar-nav.mr-auto
-          li.nav-item[class=nav_class("studies")]
-            = link_to(studies_path, class: 'nav-link')
-              | 学習記録
-          li.nav-item[class=nav_class("themes")]
-            = link_to(themes_path, class: 'nav-link')
-              | テーマ
-          li.nav-item[class=nav_class("tokens")]
-            = link_to(settings_tokens_path, class: 'nav-link')
-              | 設定
+        - if logged_in?
+          ul.navbar-nav.mr-auto
+            li.nav-item[class=nav_class("studies")]
+              = link_to(studies_path, class: 'nav-link')
+                | 学習記録
+            li.nav-item[class=nav_class("themes")]
+              = link_to(themes_path, class: 'nav-link')
+                | テーマ
+            li.nav-item[class=nav_class("tokens")]
+              = link_to(settings_tokens_path, class: 'nav-link')
+                | 設定
     main.container[role="main"]
       = yield
