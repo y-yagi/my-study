@@ -1,22 +1,24 @@
-import Chartist from "chartist"
-import "chartist/dist/chartist.min.css"
+import Chartist from "chartist";
+import "chartist/dist/chartist.min.css";
 
 const fetchSummary = () => {
-  if (!document.getElementById('ct-chart')) {
-    return
+  if (!document.getElementById("ct-chart")) {
+    return;
   }
 
-  fetch('/dashboard.json', { credentials: 'same-origin' }).then(response => {
-    return response.json()
-  }).then(data=> {
-    new Chartist.Bar('#ct-chart', data)
-  })
-}
+  fetch("/dashboard.json", { credentials: "same-origin" })
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      new Chartist.Bar("#ct-chart", data);
+    });
+};
 
-document.addEventListener('DOMContentLoaded', () => {
-  fetchSummary()
-})
+document.addEventListener("DOMContentLoaded", () => {
+  fetchSummary();
+});
 
-document.addEventListener('turbolinks:load', () => {
-  fetchSummary()
-})
+document.addEventListener("turbolinks:load", () => {
+  fetchSummary();
+});
