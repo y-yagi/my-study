@@ -24,7 +24,7 @@ gem 'jwt'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '~> 3.1.0'
+  gem 'capybara', '~> 3.1.1'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
   gem 'minitest-sub_test_case'
