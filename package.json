@@ -12,7 +12,7 @@
     "react-dom": "^16.4.1"
   },
   "devDependencies": {
-    "prettier": "^1.13.5",
+    "prettier": "^1.13.7",
     "webpack-dev-server": "2.11.1"
   }
 }
