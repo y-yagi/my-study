@@ -79,7 +79,7 @@ GEM
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
-    jb (0.5.0)
+    jb (0.6.0)
       multi_json
     jwt (2.1.0)
     listen (3.1.5)
