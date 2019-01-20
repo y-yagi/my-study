@@ -40,4 +40,23 @@ class Api::StudiesControllerTest < ActionDispatch::IntegrationTest
     assert_equal "Go", response.parsed_body["theme"]
     assert_equal "depのコードリーディング", response.parsed_body["content"]
   end
+
+  sub_test_case("create") do
+    test "success" do
+      assert_difference '@user.studies.count' do
+        post api_studies_path, params: { theme: "Docker", content: "マニュアルを読んだ", hour: 1 }, headers: { "Authorization": "JWT #{@token.value}" }, as: :json
+      end
+      assert_response :success
+
+      assert_equal "マニュアルを読んだ", response.parsed_body["content"]
+      assert response.parsed_body["id"]
+    end
+
+    test "error" do
+      post api_studies_path, params: { content: "マニュアルを読んだ", hour: 1 }, headers: { "Authorization": "JWT #{@token.value}" }, as: :json
+      assert_response :success
+
+      assert_equal "テーマを入力してください", response.parsed_body["errors"]["detail"]
+    end
+  end
 end

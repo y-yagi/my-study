@@ -1,0 +1,13 @@
+if @study.persisted?
+  {
+    id: @study.id,
+    theme: @study.theme.title,
+    content: @study.content,
+  }
+else
+  {
+    errors: {
+      detail: @study.errors.to_a.join(",")
+    }
+  }
+end
