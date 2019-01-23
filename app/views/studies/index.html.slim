@@ -1,6 +1,9 @@
 h2 学習記録
 
 table.table
+  .float-right
+    = link_to '登録', new_study_path, class: 'btn btn-outline-primary', role: 'button'
+
   thead.thead-light
     tr
       th[scope="col"] テーマ
@@ -22,6 +25,6 @@ table.table
         td = link_to '編集', edit_study_path(study), class: "btn btn-outline-info app-edit-#{study.id}", role: 'button'
         td = link_to '削除', study, data: { confirm: '本当によろしいですか?' }, method: :delete, class: "btn btn-outline-danger app-delete-#{study.id}", role: 'button'
 
-br
+.float-right
+  = paginate @studies, theme: 'twitter-bootstrap-4'
 
-= link_to '登録', new_study_path, class: 'btn btn-outline-primary', role: 'button'
