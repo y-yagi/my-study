@@ -21,6 +21,8 @@ gem 'commonmarker'
 gem 'jb'
 gem 'active_decorator'
 gem 'jwt'
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

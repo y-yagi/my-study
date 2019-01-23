@@ -2,7 +2,7 @@ class StudiesController < ApplicationController
   before_action :set_study, only: [:show, :edit, :update, :destroy]
 
   def index
-    @studies = current_user.studies.order(id: :desc)
+    @studies = current_user.studies.order(id: :desc).page(params[:page])
   end
 
   def show
