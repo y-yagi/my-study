@@ -4,6 +4,8 @@ class Study < ApplicationRecord
   belongs_to :user
   belongs_to :theme
 
+  validates :hour, presence: true
+  validates :minute, presence: true
   validate :study_time
 
   def study_time
