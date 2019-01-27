@@ -5,6 +5,6 @@ module StudyDecorator
 
   def first_line_of_content
     converted_content = CommonMarker.render_html(content, :DEFAULT)
-    converted_content.split("\n")[0].html_safe
+    truncate(strip_tags(converted_content))
   end
 end
