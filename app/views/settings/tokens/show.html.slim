@@ -1,2 +1,6 @@
+= javascript_pack_tag "tokens", 'data-turbolinks-track': 'reload'
+
 p
-  = "トークンを生成しました: #{@token.value}"
+  = "トークンを生成しました:"
+  = text_field_tag("token", @token.value, readonly: true, id: 'token', class: "form-control")
+= link_to 'トークンをコピーする', '#', class: 'btn btn-outline-info', id: 'copy-token', role: 'button'
