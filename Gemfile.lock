@@ -84,7 +84,7 @@ GEM
     io-like (0.3.0)
     jb (0.6.1)
       multi_json
-    jwt (2.1.0)
+    jwt (2.2.1)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
