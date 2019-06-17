@@ -26,7 +26,7 @@ gem 'bootstrap4-kaminari-views'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '~> 3.14.0'
+  gem 'capybara', '~> 3.24.0'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
   gem 'minitest-sub_test_case'
